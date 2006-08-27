@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: plone.mail
+Version: 0.1dev
+Summary: A package containing a few methods to assist in handling and creating messages with encoded content
+Home-page: http://svn.plone.org/svn/plone/plone.mail
+Author: Alec Mitchell
+Author-email: apm13@columbia.edu
+License: GPL
+Description: UNKNOWN
+Keywords: Mail Unicode Plone
+Platform: UNKNOWN

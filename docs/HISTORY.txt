@@ -1,0 +1,9 @@
+Changelog for plone.mail
+
+    (name of developer listed in brackets)
+
+plone.mail - 0.1 Unreleased
+
+    - Initial package structure.
+      [zopeskel]
+
