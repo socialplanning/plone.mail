@@ -18,7 +18,7 @@ def decode_header(value):
         header_val.append(string, encoding, errors='replace')
     return unicode(header_val)
 
-def constructSimpleEncodedMessage(from_addr, to_addr, subject, body,
+def construct_simple_encoded_message(from_addr, to_addr, subject, body,
                                   other_headers={}, encoding='utf-8'):
     """The python email package makes it very difficult to send quoted-printable
     messages for charsets other than ascii and selected others.  As a result we
@@ -28,7 +28,7 @@ def constructSimpleEncodedMessage(from_addr, to_addr, subject, body,
     We should be able to pass in some arbitrary unicode stuff and get back
     a sensible encoded message:
 
-        >>> m = constructSimpleEncodedMessage(u'test@example.com',
+        >>> m = construct_simple_encoded_message(u'test@example.com',
         ...     u'test@example.com',
         ...     u'Un Subj\xc3\xa9t',
         ...     u'A simple body with some non ascii t\xc3\xa9xt',
