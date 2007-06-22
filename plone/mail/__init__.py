@@ -19,7 +19,7 @@ def decode_header(value):
     return unicode(header_val)
 
 def construct_simple_encoded_message(from_addr, to_addr, subject, body,
-                                  other_headers={}, encoding='utf-8'):
+                                  other_headers=None, encoding='utf-8'):
     """The python email package makes it very difficult to send quoted-printable
     messages for charsets other than ascii and selected others.  As a result we
     need to do a few things manually here.  All inputs to this method are
@@ -43,9 +43,13 @@ def construct_simple_encoded_message(from_addr, to_addr, subject, body,
         <BLANKLINE>
         A simple body with some non ascii t=C3=83=C2=A9xt
     """
-
+    if other_headers is None:
+        other_headers = {}
     m = Message()
-    m['From'] = encode_header(from_addr, encoding)
+    if 'From' in other_headers:
+        m['From'] = encode_header(other_headers['From'], encoding)
+    else:
+        m['From'] = encode_header(from_addr, encoding)
     m['To'] = encode_header(to_addr, encoding)
     m['Subject'] = encode_header(subject, encoding)
     # Normally we wouldn't try to set these manually, but the email module
