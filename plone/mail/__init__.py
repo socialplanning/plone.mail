@@ -46,9 +46,9 @@ def construct_simple_encoded_message(from_addr, to_addr, subject, body,
     if other_headers is None:
         other_headers = {}
     m = Message()
-    if 'From' in other_headers:
-        m['From'] = encode_header(other_headers['From'], encoding)
-    else:
+    # If from is not in the set of other headers use the from addr
+    # otherwise we may be masquerading as someone else
+    if 'From' not in other_headers:
         m['From'] = encode_header(from_addr, encoding)
     m['To'] = encode_header(to_addr, encoding)
     m['Subject'] = encode_header(subject, encoding)
