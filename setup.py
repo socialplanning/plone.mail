@@ -19,6 +19,7 @@ setup(name='plone.mail',
       include_package_data=True,
       zip_safe=True,
       install_requires=[
+          'setuptools',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
