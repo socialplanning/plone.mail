@@ -23,7 +23,7 @@ def decode_header(value):
     header_val = Header.Header()
     for string, encoding in encoded_strings:
         header_val.append(string, encoding, errors='replace')
-    return unicode(header_val)
+    return unicode(header_val, errors='replace')
 
 def construct_simple_encoded_message(from_addr, to_addr, subject, body,
                                   other_headers=None, encoding='utf8'):
