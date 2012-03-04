@@ -4,7 +4,7 @@ from email import Header
 from email.MIMEText import MIMEText
 from email.MIMEMultipart import MIMEMultipart
 from email.Charset import add_charset, QP, SHORTEST
-from StructuredText.StructuredText import HTML
+from reStructuredText import HTML
 
 # Add a charset for utf8 that should be encoded quopri,
 # e.g. we assume mostly latin chars, if not the encoding will
